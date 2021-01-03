@@ -47,3 +47,5 @@ You may have noticed that I called the ChoiceBuilder class earlier without any p
 ChoiceBuilder(hv, settingsFile := "Setting.json")
 ```
 This allows for the ChoiceBuilder to be used with any HotVoice Object and any JSON file you desire.
+
+If no JsonFile is listed, a file called Setting.json will be used. No matter what, if the chosen json does not exist, it will be created, blank, and can then be used and modified to by the methods above.
