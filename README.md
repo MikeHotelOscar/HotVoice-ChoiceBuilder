@@ -16,14 +16,9 @@ To use the ChoiceBuilder, you simply need to create a JSON file with the options
 Then, to call the choices, you only need to do this:
 ```
 cb := new ChoiceBuilder(hv)
-cb.Build("directions")
+SomeGrammar := cb.Build("directions")
 ```
-
-You can then use hv.GetChoices() to assign it to a choices object like so:
-```
-DirectionChoices := hv.GetChoices("directions")
-```
-
+ 
 To view the Choices available in a JSON, one merely needs to have created a ChoiceBuilder object, and then call List() like so:
 ```
 cb := new ChoiceBuilder(hv, "SomeJSON.JSON")
