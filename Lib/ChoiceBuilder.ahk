@@ -23,7 +23,9 @@ class ChoiceBuilder {
 		if (!this.choiceNames.HasKey(choiceName)){
 			Return
 		}
-		return this.hv.NewChoices(this.choiceNames[choiceName])
+		tempgrammar := this.hv.NewGrammar()
+		tempgrammar.AppendChoices(this.hv.NewChoices(this.choiceNames[choiceName]))
+		return tempgrammar
 	}
 	
 	List(){
