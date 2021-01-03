@@ -30,6 +30,16 @@ cb := new ChoiceBuilder(hv, "SomeJSON.JSON")
 cb.List()
 ```
 
+You can add an entry to your JSON file using Add() like so:
+```
+cb.Add("ChoiceName", "Choices")
+```
+
+You can also remove them using Delete():
+```
+cb.Delete("ChoiceName")
+```
+
 ## The ChoiceBuilder Class
 
 You may have noticed that I called the ChoiceBuilder class earlier without any parameters, but it in fact accepts two in the form:
