@@ -10,7 +10,12 @@ class ChoiceBuilder {
 			this.hv := hv
 		}
 		else{
-			msgbox, JSON File Does Not Exist
+			msgbox, JSON File Does Not Exist, Creating.
+			FileAppend, {}, % settingsFile
+			this.jsonfile := settingsFile
+			FileRead, json_str, % settingsFile
+			this.choiceNames := JSON.Load(json_str)
+			this.hv := hv
 		}
 	}
 	
@@ -29,5 +34,25 @@ class ChoiceBuilder {
 			ListText .= key . "`n"
 		}
 		msgbox, %ListText%
+	}
+	
+	Add(ChoicesName, Choices){
+		FileRead, json_str, % this.jsonfile
+		FileDelete, % this.jsonfile
+		JsonObject := JSON.Load(json_str)
+		JsonObject[ChoicesName] := Choices
+		json_str := JSON.Dump(JsonObject)
+		this.choiceNames := JSON.Load(json_str)
+		FileAppend, %json_str%, % this.jsonfile  
+	}
+	
+	Delete(ChoicesName){
+		FileRead, json_str, % this.jsonfile
+		FileDelete, % this.jsonfile
+		JsonObject := JSON.Load(json_str)
+		JsonObject.Delete(ChoicesName)
+		json_str := JSON.Dump(JsonObject)
+		this.choiceNames := JSON.Load(json_str)
+		FileAppend, %json_str%, % this.jsonfile
 	}
 }
