@@ -1,5 +1,5 @@
 # HotVoice-ChoiceBuilder
-An add-on to EvilC's HotVoice system, that allows for multiple scripts to easily call choices from a JSON file. Original here: https://github.com/evilC/HotVoice
+An add-on to EvilC's HotVoice system, that allows for multiple scripts to easily call choices from a JSON file. Find it here: https://github.com/evilC/HotVoice
 
 Installation is simple, drop JSON.ahk and ChoiceBuilder.ahk into your HotVoice script's Lib folder alongside HotVoice.ahk and HotVoice.dll
 
