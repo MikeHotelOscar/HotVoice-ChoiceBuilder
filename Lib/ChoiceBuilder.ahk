@@ -21,6 +21,7 @@ class ChoiceBuilder {
 	
 	Build(choiceName){
 		if (!this.choiceNames.HasKey(choiceName)){
+			msgbox, invalid key
 			Return
 		}
 		tempgrammar := this.hv.NewGrammar()
@@ -28,14 +29,17 @@ class ChoiceBuilder {
 		return tempgrammar
 	}
 	
-	List(){
+	List(display := ""){
 		FileRead, json_str, % this.jsonfile
 		JsonObject := JSON.Load(json_str)
 		ListText := ""
 		for key, value in JsonObject{
 			ListText .= key . "`n"
 		}
-		msgbox, %ListText%
+		if (display){
+			msgbox, %ListText%
+		}
+		return ListText
 	}
 	
 	Add(ChoicesName, Choices){
