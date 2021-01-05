@@ -27,7 +27,7 @@ cb.List()
 
 You can add an entry to your JSON file using Add() like so:
 ```
-cb.Add("ChoiceName", "Choices")
+cb.Add("ChoiceName", "Choice1, Choice2, Choice3")
 ```
 
 You can also remove them using Delete():
@@ -39,7 +39,7 @@ cb.Delete("ChoiceName")
 
 You may have noticed that I called the ChoiceBuilder class earlier without any parameters, but it in fact accepts two in the form:
 ```
-ChoiceBuilder(hv, settingsFile)
+ChoiceBuilder(hv, "settingsFile.json")
 ```
 where hv is a HotVoice Object, and settingsFile is a JSON file.
 
