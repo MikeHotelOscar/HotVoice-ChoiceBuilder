@@ -1,4 +1,4 @@
-#include Lib\JSON.ahk
+#include %A_LineFile%\..\JSON.ahk
 
 class ChoiceBuilder {
 
